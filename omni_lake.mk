@@ -68,6 +68,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.bootctrl=sdm660 \
     ro.build.system_root_image=true
 
+# Time Zone data for recovery
+PRODUCT_COPY_FILES += \
+    system/timezone/output_data/iana/tzdata:recovery/root/system_root/usr/share/zoneinfo/tzdata
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := lake
 PRODUCT_NAME := omni_lake
