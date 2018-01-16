@@ -17,6 +17,8 @@
 # Vendor blobs
 $(call inherit-product-if-exists, vendor/motorola/lake/lake-vendor.mk)
 
+PRODUCT_ACTIONABLE_COMPATIBLE_PROPERTY_DISABLE := true
+
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
