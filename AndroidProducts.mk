@@ -16,3 +16,8 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/omni_lake.mk
+
+COMMON_LUNCH_CHOICES := \
+    omni_lake-eng \
+    omni_lake-userdebug \
+    omni_lake-user
