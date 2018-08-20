@@ -42,9 +42,6 @@ AB_OTA_UPDATER := true
 TARGET_USES_HARDWARE_QCOM_BOOTCTRL := true
 USE_COMMON_BOOTCTRL := true
 
-# GPT Utils
-BOARD_PROVIDES_GPTUTILS := true
-
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000
