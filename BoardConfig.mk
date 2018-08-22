@@ -38,10 +38,6 @@ TARGET_2ND_CPU_VARIANT := generic
 # Board uses A/B OTA
 AB_OTA_UPDATER := true
 
-# Bootctrl
-TARGET_USES_HARDWARE_QCOM_BOOTCTRL := true
-USE_COMMON_BOOTCTRL := true
-
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000

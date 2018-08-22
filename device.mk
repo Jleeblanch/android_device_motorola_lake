@@ -38,20 +38,15 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     update_verifier
 
-# The following modules are included in debuggable builds only.
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl \
-    update_engine_client
-
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    bootctrl.sdm660
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-service \
+    android.hardware.boot@1.0-impl-wrapper.recovery \
+    android.hardware.boot@1.0-impl-wrapper \
+    android.hardware.boot@1.0-impl.recovery \
     bootctrl.sdm660 \
-    libcutils \
-    libgptutils.sdm660.recovery \
-    libz
+    bootctrl.sdm660.recovery
 
 # Packages for decryption
 PRODUCT_PACKAGES += \
