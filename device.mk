@@ -23,9 +23,6 @@ $(call inherit-product-if-exists, vendor/motorola/lake/lake-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-PRODUCT_ENFORCE_RRO_TARGETS := \
-    framework-res
-
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
 
