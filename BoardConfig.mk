@@ -53,5 +53,8 @@ ENABLE_VENDOR_RIL_SERVICE := false
 # SELinux
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
+# Enable real time lockscreen charging current values
+BOARD_GLOBAL_CFLAGS += DBATTERY_REAL_INFO
+
 # inherit from the proprietary version
 -include vendor/motorola/lake/BoardConfigVendor.mk
