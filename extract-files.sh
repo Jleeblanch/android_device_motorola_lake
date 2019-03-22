@@ -19,9 +19,9 @@ set -e
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
+if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-LINEAGE_ROOT="$MY_DIR"/../../..
+LINEAGE_ROOT="${MY_DIR}"/../../..
 
 export DEVICE=lake
 export DEVICE_COMMON=sdm660-common
@@ -29,9 +29,9 @@ export VENDOR=motorola
 
 export DEVICE_BRINGUP_YEAR=2019
 
-./../../$VENDOR/$DEVICE_COMMON/extract-files.sh $@
+./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh "$@"
 
-BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
+BLOB_ROOT="${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary"
 
 # Add uhid group for fingerprint service
 FP_SERVICE_RC="$BLOB_ROOT"/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-ets.rc
