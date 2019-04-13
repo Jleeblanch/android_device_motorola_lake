@@ -38,3 +38,4 @@ insmod /vendor/lib/modules/bq2597x_mmi.ko
 insmod /vendor/lib/modules/sx933x_sar.ko
 
 umount /vendor
+setprop crypto.ready 1
