@@ -15,7 +15,7 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, build/target/product/embedded.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
@@ -60,4 +60,4 @@ PRODUCT_DEVICE := lake
 PRODUCT_NAME := omni_lake
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := Moto G7 Plus
-PRODUCT_MANUFACTURER := motorola
+PRODUCT_MANUFACTURER := Motorola
