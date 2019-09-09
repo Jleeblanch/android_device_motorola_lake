@@ -48,9 +48,9 @@ on early-init
 
 on post-fs-data
     # Start loading touch modules
-    start vendor.oem_panel
+    start vendor.oem-panel
 
-service vendor.oem_panel /vendor/bin/init.oem.panel.sh
+service vendor.oem-panel /vendor/bin/init.oem.panel.sh
     user root
     oneshot
     disabled
