@@ -53,8 +53,5 @@ ENABLE_VENDOR_RIL_SERVICE := false
 # SELinux
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
-# Treble
-PRODUCT_SHIPPING_API_LEVEL := 26
-
 # inherit from the proprietary version
 -include vendor/motorola/lake/BoardConfigVendor.mk
