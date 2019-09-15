@@ -56,6 +56,13 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     libgptutils \
     libz
 
+# Properties for decryption
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.keystore=sdm660 \
+    ro.hardware.gatekeeper=sdm660 \
+    ro.hardware.bootctrl=sdm660 \
+    ro.build.system_root_image=true
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := lake
 PRODUCT_NAME := omni_lake
