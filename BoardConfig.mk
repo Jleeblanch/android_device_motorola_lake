@@ -36,6 +36,9 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc
 TARGET_KERNEL_CONFIG := lineageos_lake_defconfig
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/touch.xml
+
 # NFC
 BOARD_NFC_CHIPSET := pn553
 
