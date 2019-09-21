@@ -35,6 +35,9 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 TARGET_KERNEL_CONFIG := lineageos_lake_defconfig
 BOARD_KERNEL_SEPARATED_DTBO := true
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/touch.xml
+
 # NFC
 BOARD_NFC_CHIPSET := pn553
 

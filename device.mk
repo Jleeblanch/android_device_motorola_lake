@@ -65,6 +65,10 @@ PRODUCT_PACKAGES += \
     init.lake.rc \
     init.oem.panel.sh
 
+# Lineage hardware
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.sdm660
+
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.1-service \
