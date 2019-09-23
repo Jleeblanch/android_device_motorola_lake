@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_lake.mk
+    $(LOCAL_DIR)/aosip_lake.mk
