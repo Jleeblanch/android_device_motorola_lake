@@ -32,8 +32,11 @@ BOARD_HAS_QCA_FM_SOC := "cherokee"
 
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-TARGET_KERNEL_CONFIG := lineageos_lake_defconfig
 BOARD_KERNEL_SEPARATED_DTBO := true
+TARGET_KERNEL_CONFIG := lineageos_lake_defconfig
+
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    DTC_EXT=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/touch.xml
