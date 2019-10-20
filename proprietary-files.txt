@@ -418,7 +418,7 @@ vendor/lib64/libmmcamera_tintless_bg_pca_algo.so
 
 # Camera - Postprocessing
 vendor/lib/libmm-qcamera.so
-vendor/lib/libmot_gpu_mapper.so
+vendor/lib/libmot_gpu_mapper.so|bee29b80dfa5ea959fc7ba5c181492291faa8631
 vendor/lib/libS5k2l7Pdaf.so
 vendor/lib/libS5k2l7PdafCamif.so
 
@@ -469,7 +469,7 @@ vendor/firmware/aw869x_rtp.bin
 
 # Fingerprint
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-ets
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-ets.rc
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-ets.rc|8f4494027b938df11d69ac3284af679eec445ff4
 vendor/etc/init/init.ets.rc
 vendor/lib/libets_fp_et5.so
 vendor/lib/libets_teeclient.so
