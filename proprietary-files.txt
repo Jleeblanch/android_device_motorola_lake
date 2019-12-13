@@ -483,9 +483,7 @@ vendor/lib64/vendor.egistec.hardware.fingerprint@2.0.so
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
-vendor/lib/hw/gatekeeper.sdm660.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
-vendor/lib64/hw/gatekeeper.sdm660.so
 
 # IMS
 -product/priv-app/ims/ims.apk|e33e718bb02facea862ab56384c4e300a1826dbf
