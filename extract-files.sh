@@ -22,7 +22,7 @@ if [ "${BASH_SOURCE[0]}" != "${0}" ]; then
 fi
 
 set -e
-LINEAGE_ROOT="$MY_DIR"/../../..
+LINEAGE_ROOT="${MY_DIR}"/../../..
 
 # Required!
 export DEVICE=lake
@@ -33,8 +33,15 @@ export DEVICE_BRINGUP_YEAR=2019
 
 "./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"
 
-BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
+function blob_fixup() {
+    case "${1}" in
 
-# Add uhid group for fingerprint service
-FP_SERVICE_RC="$BLOB_ROOT"/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-ets.rc
-sed -i "s/input/uhid input/" "$FP_SERVICE_RC"
+    # Add uhid group for fingerprint service
+    vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-ets.rc)
+        sed -i 's|system input|system uhid input|g' "${2}"
+        ;;
+
+    esac
+}
+
+BLOB_ROOT="${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary"
