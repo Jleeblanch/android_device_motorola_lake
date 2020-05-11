@@ -15,8 +15,6 @@
 #
 
 # Inherit from motorola sdm660-common
-# This flag needs to be set first
-BOARD_USES_KEYMASTER_4 := true
 -include device/motorola/sdm660-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/motorola/lake
