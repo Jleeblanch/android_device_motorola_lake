@@ -27,6 +27,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore_desede=true
 
+# NFC
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.nfc_nci=pn54x
+
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.sensors=lake \
