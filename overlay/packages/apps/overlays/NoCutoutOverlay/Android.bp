@@ -1,0 +1,11 @@
+android_app {
+    name: "NoCutoutOverlay",
+
+    resource_dirs: ["res"],
+    manifest: "AndroidManifest.xml",
+
+    certificate: "platform",
+    sdk_version: "current",
+    vendor: true,
+
+}
