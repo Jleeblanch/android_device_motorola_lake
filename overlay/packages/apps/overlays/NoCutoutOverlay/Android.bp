@@ -8,4 +8,7 @@ android_app {
     sdk_version: "current",
     vendor: true,
 
+    dex_preopt: {
+        enabled: false,
+    },
 }
