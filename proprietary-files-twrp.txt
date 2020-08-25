@@ -1,0 +1,47 @@
+# Device blobs for TWRP
+#
+
+# Relinked
+vendor/bin/hw/android.hardware.boot@1.0-service:sbin/android.hardware.boot@1.0-service
+vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti:sbin/android.hardware.gatekeeper@1.0-service-qti
+vendor/bin/hw/android.hardware.keymaster@4.0-service-qti:sbin/android.hardware.keymaster@4.0-service-qti
+vendor/bin/qseecomd:sbin/qseecomd
+
+# System
+lib64/android.hardware.boot@1.0.so:sbin/android.hardware.boot@1.0.so
+lib64/android.hardware.confirmationui@1.0.so:sbin/android.hardware.confirmationui@1.0.so
+lib64/android.hidl.base@1.0.so:sbin/android.hidl.base@1.0.so
+lib64/libicuuc.so:sbin/libicuuc.so
+lib64/libion.so:sbin/libion.so
+lib64/libkeymaster4support.so:sbin/libkeymaster4support.so
+lib64/libkeymaster_messages.so:sbin/libkeymaster_messages.so
+lib64/libkeymaster_portable.so:sbin/libkeymaster_portable.so
+lib64/libsoftkeymasterdevice.so:sbin/libsoftkeymasterdevice.so
+lib64/libxml2.so:sbin/libxml2.so
+
+# Vendor
+vendor/lib64/hw/android.hardware.boot@1.0-impl.so
+vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
+vendor/lib64/hw/gatekeeper.sdm660.so
+vendor/lib64/hw/keystore.sdm660.so
+vendor/lib64/libdiag.so
+vendor/lib64/libdrmfs.so
+vendor/lib64/libdrmtime.so
+vendor/lib64/libGPreqcancel.so
+vendor/lib64/libGPreqcancel_svc.so
+vendor/lib64/libkeymasterdeviceutils.so
+vendor/lib64/libkeymasterprovision.so
+vendor/lib64/libkeymasterutils.so
+vendor/lib64/libqdutils.so
+vendor/lib64/libqisl.so
+vendor/lib64/libQSEEComAPI.so
+vendor/lib64/libqservice.so
+vendor/lib64/libqtikeymaster4.so
+vendor/lib64/librecovery_updater_msm.so
+vendor/lib64/librpmb.so
+vendor/lib64/libsecureui_svcsock.so
+vendor/lib64/libSecureUILib.so
+vendor/lib64/libssd.so
+vendor/lib64/libStDrvInt.so
+vendor/lib64/libtime_genoff.so
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
