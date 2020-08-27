@@ -36,6 +36,7 @@ on fs
     export LD_LIBRARY_PATH /sbin:/vendor/lib64:/vendor/lib64/hw
     install_keyring
 
+on early-init
     start load_drivers
 
 on property:dlkm.loaded=1
