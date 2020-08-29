@@ -28,6 +28,7 @@
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
     chmod 0660 /dev/qseecom
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
@@ -35,7 +36,11 @@ on fs
     export LD_LIBRARY_PATH /sbin:/vendor/lib64:/vendor/lib64/hw
     install_keyring
 
+    start load_drivers
+
+on property:dlkm.loaded=1
     start boot-1-0
+    start prepdecrypt
 
 # separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service sbinqseecomd /sbin/qseecomd
@@ -45,6 +50,13 @@ service sbinqseecomd /sbin/qseecomd
     seclabel u:r:recovery:s0
 
 service load_drivers /sbin/load_drivers.sh
+    oneshot
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service prepdecrypt /sbin/prepdecrypt.sh
     oneshot
     disabled
     user root
@@ -99,8 +111,8 @@ service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
 on boot
     setprop sys.usb.config adb
 
-on init
-    start load_drivers
+on property:crypto.ready=1
+    start sbinqseecomd
 
 on property:crypto.ready=0
     stop sbinqseecomd
@@ -109,9 +121,6 @@ on property:crypto.ready=0
     stop hwservicemanager
     stop keystore
     stop servicemanager
-
-on property:crypto.ready=1
-    start sbinqseecomd
 
 on property:vendor.sys.listeners.registered=true
     start hwservicemanager
