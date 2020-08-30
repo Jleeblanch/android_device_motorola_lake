@@ -35,9 +35,6 @@ BOARD_HAS_QCA_FM_SOC := "cherokee"
 BOARD_BOOT_HEADER_VERSION := 1
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-TARGET_KERNEL_ADDITIONAL_FLAGS := \
-    DTC_EXT=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc \
-    MKDTIMG=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/mkdtimg
 TARGET_KERNEL_CONFIG := lineageos_lake_defconfig
 
 # NFC
