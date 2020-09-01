@@ -33,15 +33,13 @@ on fs
 
     export LD_LIBRARY_PATH /sbin:/vendor/lib64:/vendor/lib64/hw
 
+on boot
+    start load_drivers
+    setprop sys.usb.config adb
+
 service load_drivers /system/bin/load_drivers.sh
     oneshot
     disabled
     user root
     group root
     seclabel u:r:recovery:s0
-
-on boot
-    setprop sys.usb.config adb
-
-on init
-    start load_drivers
