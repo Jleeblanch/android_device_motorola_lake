@@ -12,17 +12,13 @@ finish()
     exit 0
 }
 
-suffix=$(getprop ro.boot.slot_suffix)
-if [ -z "$suffix" ]; then
-    suf=$(getprop ro.boot.slot)
-    suffix="_$suf"
-fi
-venpath="/dev/block/bootdevice/by-name/vendor$suffix"
+slot_suffix=$(getprop ro.boot.slot_suffix)
+vendor_path="/dev/block/bootdevice/by-name/vendor$slot_suffix"
 mkdir /v
-mount -t ext4 -o ro "$venpath" /v
-syspath="/dev/block/bootdevice/by-name/system$suffix"
+mount -t ext4 -o ro "$vendor_path" /v
+system_path="/dev/block/bootdevice/by-name/system$slot_suffix"
 mkdir /s
-mount -t ext4 -o ro "$syspath" /s
+mount -t ext4 -o ro "$system_path" /s
 
 is_fastboot_twrp=$(getprop ro.boot.fastboot)
 if [ ! -z "$is_fastboot_twrp" ]; then
@@ -30,15 +26,12 @@ if [ ! -z "$is_fastboot_twrp" ]; then
     patchlevel=$(getprop ro.build.version.security_patch_orig)
     setprop ro.build.version.release "$osver"
     setprop ro.build.version.security_patch "$patchlevel"
-    setprop ro.vendor.build.security_patch "2018-06-05"
+    setprop ro.vendor.build.security_patch "2020-06-01"
     finish
 fi
 
-build_prop_path="/s/build.prop"
-if [ -f /s/system/build.prop ]; then
-    build_prop_path="/s/system/build.prop"
-fi
 
+build_prop_path="/s/system/build.prop"
 vendor_prop_path="/v/build.prop"
 if [ -f "$build_prop_path" ]; then
     # TODO: It may be better to try to read these from the boot image than from /system
@@ -54,7 +47,7 @@ else
     patchlevel=$(getprop ro.build.version.security_patch_orig)
     setprop ro.build.version.release "$osver"
     setprop ro.build.version.security_patch "$patchlevel"
-    setprop ro.vendor.build.security_patch "2018-06-05"
+    setprop ro.vendor.build.security_patch "2020-06-01"
 fi
 finish
 

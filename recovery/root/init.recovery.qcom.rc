@@ -36,10 +36,10 @@ on fs
     export LD_LIBRARY_PATH /sbin:/vendor/lib64:/vendor/lib64/hw
     install_keyring
 
-on early-init
+on boot
     start load_drivers
 
-on property:dlkm.loaded=1
+on property:dlkm.loaded=*
     start boot-1-0
     start prepdecrypt
 
