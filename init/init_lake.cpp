@@ -91,7 +91,6 @@ void vendor_load_device_properties()
         property_override_device("ro.bootimage.build.fingerprint", "motorola/lake_revvl/lake:9/PCWS29.83-56-12/ec5de:user/release-keys");
         property_override_device("ro.build.description", "lake_revvl_n-user 9 PCWS29.83-56-12 ec5de release-keys");
         property_override_device("ro.build.fingerprint", "motorola/lake_revvl_n/lake_n:9/PCWS29.83-56-12/ec5de:user/release-keys");
-        property_override_device("ro.build.thumbprint", "9/PCWS29.83-56-12/ec5de:user/release-keys");
         property_override_device("persist.vendor.radio.customer_mbns", "tmo_usa_ims_default.mbn");
         property_override_device("persist.vendor.radio.data_con_rprt", "1");
         property_override_device("persist.vendor.ims.playout_delay", "10");
@@ -100,15 +99,15 @@ void vendor_load_device_properties()
     } else {
         /* moto g(7) plus (Unlocked) */
         for (const auto &source : ro_props_default_source_order) {
-            set_ro_build_prop(source, "fingerprint", "motorola/lake_retail/lake:10/QPW30.61-21/cb81e:user/release-keys");
+            set_ro_build_prop(source, "fingerprint", "motorola/lake_retail/lake:10/QPWS30.61-21-14/a5a6c:user/release-keys");
             set_ro_product_prop(source, "device", "lake_n");
             set_ro_product_prop(source, "model", "moto g(7) plus");
             set_ro_product_prop(source, "name", "lake_n");
         }
-        property_override_device("ro.bootimage.build.fingerprint", "motorola/lake_retail/lake:10/QPW30.61-21/cb81e:user/release-keys");
-        property_override_device("ro.build.description", "lake_n-user 10 QPW30.61-21 cb81e release-keys");
-        property_override_device("ro.build.fingerprint", "motorola/lake_n/lake_n:10/QPW30.61-21/cb81e:user/release-keys");
-        property_override_device("ro.build.thumbprint", "10/QPW30.61-21/cb81e:user/release-keys");
+        property_override_device("ro.bootimage.build.fingerprint", "motorola/lake_retail/lake:10/QPWS30.61-21-14/a5a6c:user/release-keys");
+        property_override_device("ro.build.description", "lake_n-user 10 QPWS30.61-21-14 a5a6c release-keys");
+        property_override_device("ro.build.fingerprint", "motorola/lake_n/lake_n:10/QPWS30.61-21-14/a5a6c:user/release-keys");
+        property_override_device("ro.vendor.build.security_patch", "2020-08-01");
     }
 
     device = GetProperty("ro.product.device", "");
