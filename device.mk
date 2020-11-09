@@ -66,3 +66,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+
+# tzdata
+PRODUCT_PACKAGES += \
+    tzdata_twrp
