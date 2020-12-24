@@ -51,4 +51,4 @@ else
 fi
 
 umount /vendor
-setprop crypto.ready 1
+setprop dlkm.loaded 1
