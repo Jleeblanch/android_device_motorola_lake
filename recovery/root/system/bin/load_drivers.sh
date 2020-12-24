@@ -1,4 +1,4 @@
-#!/sbin/sh
+#!/system/bin/sh
 
 load_panel_modules()
 {
@@ -47,7 +47,7 @@ if [ -d /vendor/lib/modules ]; then
 else
     # In case /vendor is empty for whatever reason
     # make sure at least touchscreen is working
-    load_panel_modules /sbin/modules
+    load_panel_modules /system/bin/modules
 fi
 
 umount /vendor

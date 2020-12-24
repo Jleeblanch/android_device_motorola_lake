@@ -35,40 +35,39 @@ on fs
     export LD_LIBRARY_PATH /sbin:/vendor/lib64:/vendor/lib64/hw
     install_keyring
 
-# separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
-service sbinqseecomd /sbin/qseecomd
+service qseecomd /system/bin/qseecomd
     disabled
     user root
     group root
     seclabel u:r:recovery:s0
 
-service load_drivers /sbin/load_drivers.sh
+service load_drivers /system/bin/load_drivers.sh
     oneshot
     disabled
     user root
     group root
     seclabel u:r:recovery:s0
 
-service hwservicemanager /sbin/hwservicemanager
+service hwservicemanager /system/bin/hwservicemanager
     user root
     group root
     disabled
     onrestart setprop hwservicemanager.ready false
     seclabel u:r:recovery:s0
 
-service boot-1-0 /sbin/android.hardware.boot@1.0-service
+service boot-1-0 /system/bin/android.hardware.boot@1.0-service
     user root
     group root
     disabled
     seclabel u:r:recovery:s0
 
-service servicemanager /sbin/servicemanager
+service servicemanager /system/bin/servicemanager
     user root
     group root readproc
     disabled
     seclabel u:r:recovery:s0
 
-service keystore_auth /sbin/keystore_auth
+service keystore_auth /system/bin/keystore_auth
     oneshot
     user system
     group root
@@ -82,13 +81,13 @@ service keystore /sbin/keystore /tmp/misc/keystore
     disabled
     seclabel u:r:recovery:s0
 
-service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service-qti
+service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service-qti
     user root
     group root
     disabled
     seclabel u:r:recovery:s0
 
-service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
+service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service-qti
     user root
     group root
     disabled
@@ -101,7 +100,7 @@ on init
     start load_drivers
 
 on property:crypto.ready=0
-    stop sbinqseecomd
+    stop qseecomd
     stop keymaster-4-0
     stop gatekeeper-1-0
     stop hwservicemanager
@@ -109,7 +108,7 @@ on property:crypto.ready=0
     stop servicemanager
 
 on property:crypto.ready=1
-    start sbinqseecomd
+    start qseecomd
 
 on property:vendor.sys.listeners.registered=true
     start hwservicemanager
