@@ -53,6 +53,9 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
+PRODUCT_HOST_PACKAGES += \
+    libandroidicu
+
 # Properties for decryption
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore=sdm660 \
