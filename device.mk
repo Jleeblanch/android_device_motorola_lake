@@ -64,3 +64,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.gatekeeper=sdm660 \
     ro.hardware.bootctrl=sdm660 \
     ro.build.system_root_image=true
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
