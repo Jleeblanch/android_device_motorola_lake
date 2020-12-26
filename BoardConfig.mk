@@ -151,3 +151,7 @@ TW_H_OFFSET := -110
 # TWRP Debugging
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+
+# TWRP Installer
+RECOVERY_INSTALLER_PATH := bootable/recovery/installer
+USE_RECOVERY_INSTALLER := true
