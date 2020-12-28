@@ -48,6 +48,10 @@ PRODUCT_PACKAGES += \
     bootctrl.sdm660 \
     bootctrl.sdm660.recovery
 
+PRODUCT_PACKAGES += \
+    libgptutils.sdm660 \
+    libgptutils.sdm660.recovery
+
 # Packages for decryption
 PRODUCT_PACKAGES += \
     qcom_decrypt \
