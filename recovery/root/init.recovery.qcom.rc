@@ -35,7 +35,6 @@ on fs
 
 on boot
     start load_drivers
-    setprop sys.usb.config adb
 
 service load_drivers /system/bin/load_drivers.sh
     oneshot
