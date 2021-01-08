@@ -1,10 +1,10 @@
 /boot         emmc          /dev/block/bootdevice/by-name/boot           flags=slotselect
 /data         ext4          /dev/block/bootdevice/by-name/userdata       flags=fileencryption=ice:aes-256-cts
 /dtbo         emmc          /dev/block/bootdevice/by-name/dtbo           flags=backup=1;display="DTBO";slotselect;flashimg=1
-/system       ext4          /dev/block/bootdevice/by-name/system         flags=slotselect
-/system_image emmc          /dev/block/bootdevice/by-name/system         flags=slotselect
-/vendor       ext4          /dev/block/bootdevice/by-name/vendor         flags=backup=1;slotselect;wipeingui
-/vendor_image emmc          /dev/block/bootdevice/by-name/vendor         flags=backup=1;slotselect
+/system       ext4          /dev/block/bootdevice/by-name/system         flags=backup=1;display="System";slotselect;wipeingui
+/system_image emmc          /dev/block/bootdevice/by-name/system         flags=backup=1;display="System.img";slotselect
+/vendor       ext4          /dev/block/bootdevice/by-name/vendor         flags=backup=1;display="Vendor";slotselect;wipeingui
+/vendor_image emmc          /dev/block/bootdevice/by-name/vendor         flags=backup=1;display="Vendor.img";slotselect
 /efs1         emmc          /dev/block/bootdevice/by-name/modemst1       flags=backup=1;display=EFS
 /efs2         emmc          /dev/block/bootdevice/by-name/modemst2       flags=backup=1;subpartitionof=/efs1
 /persist      ext4          /dev/block/bootdevice/by-name/persist        flags=backup=1;display="Persist"
@@ -22,4 +22,4 @@
 /bt_firmware  emmc          /dev/block/bootdevice/by-name/bluetooth      flags=slotselect
 
 /external_sd  auto          /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="Micro SDcard";storage;wipeingui;removable
-/usb_otg      auto          /dev/block/sda1       /dev/block/sda         flags=display="USB-OTG";storage;wipeingui;removable 
+/usb_otg      auto          /dev/block/sda1       /dev/block/sda         flags=display="USB-OTG";storage;wipeingui;removable
