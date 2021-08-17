@@ -1,0 +1,8 @@
+// Device init scripts
+
+prebuilt_etc {
+    name: "init.lake.rc",
+    src: "etc/init.lake.rc",
+    sub_dir: "init/hw",
+    soc_specific: true,
+}
